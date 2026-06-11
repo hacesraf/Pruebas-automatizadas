@@ -1,0 +1,250 @@
+{
+  "info": {
+    "_postman_id": "682a806d-c93d-4531-bdf0-ea587aaad57d",
+    "name": "Pruebas Backend - JSONPlaceholder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55644250",
+    "_collection_link": "https://go.postman.co/collection/55644250-682a806d-c93d-4531-bdf0-ea587aaad57d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "TC01 - Obtener todos los posts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"La respuesta es un arreglo\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.be.an(\"array\");",
+              "});",
+              "",
+              "pm.test(\"El arreglo no está vacío\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC02 - Obtener post por ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"El post tiene las propiedades correctas\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.have.property(\"id\");",
+              "    pm.expect(body).to.have.property(\"title\");",
+              "    pm.expect(body).to.have.property(\"body\");",
+              "    pm.expect(body).to.have.property(\"userId\");",
+              "});",
+              "",
+              "pm.test(\"El ID del post es 1\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.id).to.eql(1);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC03 - Post inexistente devuelve 404",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 404\", function () {",
+              "    pm.response.to.have.status(404);",
+              "});",
+              "",
+              "pm.test(\"El cuerpo de respuesta está vacío o es objeto vacío\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.be.an(\"object\");",
+              "    pm.expect(Object.keys(body).length).to.eql(0);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/99999",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC04 - Crear nuevo post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "",
+              "pm.test(\"La respuesta contiene el post creado\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body.title).to.eql(\"Prueba automatizada\");",
+              "    pm.expect(body.userId).to.eql(1);",
+              "});",
+              "",
+              "pm.test(\"Se asignó un ID al nuevo post\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.have.property(\"id\");",
+              "    pm.expect(body.id).to.be.a(\"number\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Prueba automatizada\",\n    \"body\": \"Este post fue creado por prueba automatizada\",\n    \"userId\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC05 - Obtener usuario por ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"El usuario tiene nombre y email\", function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.have.property(\"name\");",
+              "    pm.expect(body).to.have.property(\"email\");",
+              "    pm.expect(body).to.have.property(\"username\");",
+              "});",
+              "",
+              "pm.test(\"Tiempo de respuesta menor a 1000ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
