@@ -33,7 +33,6 @@ Las pruebas mostrarán resultados PASS/FAIL en consola dependiendo del resultado
 ---
 
 # Autores
-Rafael Leopoldo Haces Sanchez Breton
 Fabricio Gutierrez Ramirez
 Daniel Navarro Cuevas
 Ricardo Daniel Gonzalez Sanchez
