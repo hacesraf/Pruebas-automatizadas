@@ -6,8 +6,8 @@ Proyecto de automatización de pruebas frontend utilizando Selenium IDE sobre un
 y de pruebas de backend utilizando PostMan y Newman sobre un API publico.
 
 Aplicación probada:
-https://www.saucedemo.com
-https://jsonplaceholder.typicode.com
+* https://www.saucedemo.com
+* https://jsonplaceholder.typicode.com
 ---
 
 # Herramientas utilizadas
@@ -33,10 +33,10 @@ Las pruebas mostrarán resultados PASS/FAIL en consola dependiendo del resultado
 ---
 
 # Autores
-Fabricio Gutierrez Ramirez
-Daniel Navarro Cuevas
-Ricardo Daniel Gonzalez Sanchez
-Christian Alexander Duran Bonilla
-Emilio Francisco Tumbleson Miranda
+* Fabricio Gutierrez Ramirez
+* Daniel Navarro Cuevas
+* Ricardo Daniel Gonzalez Sanchez
+* Christian Alexander Duran Bonilla
+* Emilio Francisco Tumbleson Miranda
 
 Rafa Haces
