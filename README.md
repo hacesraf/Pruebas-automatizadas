@@ -44,5 +44,29 @@ Se utilizó para ejecutar las colecciones de Postman desde la terminal. Esto per
 
 Ejecutar el siguiente comando en la terminal:
 
-```bas
 selenium-side-runner Test_Frontend.side
+
+---
+
+##Ejecucion de pruebas Backend
+
+Ejecutar el siguiente comando mediante Newman
+
+newman run Coleccion_API.json
+
+---
+##Resultado esperado
+
+Las pruebas mostraran resultados de PASS O FAIL en la consola,
+indicando el estado de cada caso de prueba ejecutado.
+
+---
+##Bibliografia
+
+1. Selenium IDE Documentation: https://www.selenium.dev/selenium-ide/
+2. Selenium Side Runner Documentation: https://www.selenium.dev/selenium-ide/docs/en/introduction/command-line-runner
+3. Postman Learning Center: https://learning.postman.com/
+4. Newman Documentation: https://github.com/postmanlabs/newman
+5. Sauce Demo: https://www.saucedemo.com/
+6. JSONPlaceholder: https://jsonplaceholder.typicode.com/
+
