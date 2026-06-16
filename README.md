@@ -58,7 +58,6 @@ Ejecutar la colección de Postman mediante Newman:
 newman run Coleccion_API.json
 ```
 
-> Sustituir `Coleccion_API.json` por el nombre correspondiente de la colección utilizada en el proyecto.
 
 ---
 
