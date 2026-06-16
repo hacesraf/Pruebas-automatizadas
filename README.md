@@ -6,17 +6,17 @@ Proyecto de automatización de pruebas frontend utilizando Selenium IDE sobre un
 
 ### Aplicaciones probadas
 
-- https://www.saucedemo.com
-- https://jsonplaceholder.typicode.com
+* https://www.saucedemo.com
+* https://jsonplaceholder.typicode.com
 
 ---
 
 ## Herramientas utilizadas
 
-- Selenium IDE
-- Selenium Side Runner
-- Postman
-- Newman
+* Selenium IDE
+* Selenium Side Runner
+* Postman
+* Newman
 
 ---
 
@@ -44,24 +44,31 @@ Se utilizó para ejecutar las colecciones de Postman desde la terminal. Esto per
 
 Ejecutar el siguiente comando en la terminal:
 
+```bash
 selenium-side-runner Test_Frontend.side
+```
 
 ---
 
-##Ejecucion de pruebas Backend
+## Ejecución de pruebas Backend
 
-Ejecutar el siguiente comando mediante Newman
+Ejecutar la colección de Postman mediante Newman:
 
+```bash
 newman run Coleccion_API.json
+```
+
+> Sustituir `Coleccion_API.json` por el nombre correspondiente de la colección utilizada en el proyecto.
 
 ---
-##Resultado esperado
 
-Las pruebas mostraran resultados de PASS O FAIL en la consola,
-indicando el estado de cada caso de prueba ejecutado.
+## Resultado esperado
+
+Las pruebas mostrarán resultados **PASS** o **FAIL** en la consola, indicando el estado de cada caso de prueba ejecutado.
 
 ---
-##Bibliografia
+
+## Bibliografía
 
 1. Selenium IDE Documentation: https://www.selenium.dev/selenium-ide/
 2. Selenium Side Runner Documentation: https://www.selenium.dev/selenium-ide/docs/en/introduction/command-line-runner
@@ -70,3 +77,24 @@ indicando el estado de cada caso de prueba ejecutado.
 5. Sauce Demo: https://www.saucedemo.com/
 6. JSONPlaceholder: https://jsonplaceholder.typicode.com/
 
+---
+
+## Tecnologías utilizadas
+
+* JavaScript
+* Selenium IDE
+* Selenium Side Runner
+* Postman
+* Newman
+* Node.js
+
+---
+
+## Autores
+
+* Fabricio Gutierrez Ramirez
+* Daniel Navarro Cuevas
+* Ricardo Daniel Gonzalez Sanchez
+* Christian Alexander Duran Bonilla
+* Emilio Francisco Tumbleson Miranda
+* Rafa Haces
